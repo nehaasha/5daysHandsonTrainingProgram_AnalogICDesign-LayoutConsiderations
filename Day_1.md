@@ -213,6 +213,26 @@ VDD: library = analogLib, cell = Vsin\
 **Saving the Schematic:**
 + In ADE, press Fission, choose Save State, select the cell view, and click OK.
 
-### Example Circuit
+### Example Circuit in Cadense
 <img width="336" height="404" alt="Image" src="https://github.com/user-attachments/assets/21ab1bf4-bd7a-44df-8e76-e2d039e21a14" />
 
++ <img width="1002" height="816" alt="Image" src="https://github.com/user-attachments/assets/a255f891-319e-484c-bc13-79b0cc44dc36" />
+
++ <img width="750" height="833" alt="Image" src="https://github.com/user-attachments/assets/2c45cc46-0f46-4189-b8cf-022859ce5bd6" />
+
++ <img width="1600" height="900" alt="Image" src="https://github.com/user-attachments/assets/2f5808cc-f228-4e18-89af-2c2ea6302619" />
+
++ <img width="1600" height="900" alt="Image" src="https://github.com/user-attachments/assets/13376b0d-6505-4252-9848-a313d74d7c01" />
+
++ <img width="1187" height="656" alt="Image" src="https://github.com/user-attachments/assets/8c88617d-b2a0-44b8-bba7-7e3b61a4c113" />
+
++ <img width="1600" height="900" alt="Image" src="https://github.com/user-attachments/assets/c762607b-1bdd-43e8-aff6-c0a42560da43" />
+
++ <img width="1600" height="900" alt="Image" src="https://github.com/user-attachments/assets/9d0c0fe3-dec4-4e27-810a-29bb398a3eba" />
+
++ <img width="999" height="838" alt="Image" src="https://github.com/user-attachments/assets/c6862280-4e42-467c-bf6e-d090dc6b6cf0" />
+
++ <img width="999" height="812" alt="Image" src="https://github.com/user-attachments/assets/ad51469f-7b08-4b73-a074-21d7ba6acf11" />
+
+### Conclusion
+Day 1 of the workshop provided a strong foundation in mixed-signal IC design by introducing core concepts of MOSFET operation, mixed-signal architecture, and key analog building blocks. The session explained the importance of MOSFETs in modern ICs while highlighting the role of BJTs in precision circuits such as bandgap references. An overview of mixed-signal challenges and major analog blocks like PLL, BGR, and LDO enhanced conceptual understanding. Hands-on exposure to the Cadence Virtuoso tool familiarized participants with schematic creation, simulation, and basic analysis techniques, effectively bridging theory and practical IC design.
