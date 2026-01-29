@@ -221,6 +221,8 @@ Limited transconductance (gm), Load resistance of PMOS, Small-signal operation a
 <img width="898" height="723" alt="Image" src="https://github.com/user-attachments/assets/e83062d3-5d8d-42b3-8151-1c95cf2434e2" />
 
 **Testing Symbol**
+
+
 **Transient Analysis**
 
 <img width="1600" height="900" alt="Image" src="https://github.com/user-attachments/assets/01818939-e6c9-474b-a4c0-aab75a31ea10" />
