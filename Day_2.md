@@ -157,4 +157,59 @@ Limited transconductance (gm), Load resistance of PMOS, Small-signal operation a
 + Beyond this frequency, the output magnitude drops sharply, indicating gain reduction.
 + At very high frequencies (>10¹⁰ Hz), the output magnitude approaches near zero.
 + The response clearly shows a single-pole roll-off characteristic.
++ Av=-gm3(ro3||ro4)
 
+## Circuit 4- Differential Amplifier
+<img width="269" height="235" alt="Image" src="https://github.com/user-attachments/assets/a8b438eb-4cb4-4c72-973b-e525e9051cc4" />
+<img width="902" height="710" alt="Image" src="https://github.com/user-attachments/assets/ab1c2521-c679-4d5e-af58-66774a29b555" />
+
++ The circuit is a CMOS differential amplifier designed using 45 nm CMOS technology.
++ It consists of an NMOS differential input pair, a PMOS active load, and an NMOS tail current source.
++ The circuit operates with a supply voltage of 2 V.
++ Differential input signals Vinp and Vinn are applied to the NMOS input transistors.
++ A fixed bias voltage (Vbias) is used to set the tail current.
++ The PMOS transistors act as a current mirror load, converting differential current into a single-ended output.
++ The output voltage (Vout1) is taken from one side of the PMOS load.
++ The circuit amplifies the difference between Vinp and Vinn.
+
+### Transient analysis
+<img width="992" height="790" alt="Image" src="https://github.com/user-attachments/assets/e8db4862-5db4-492e-976c-12ebf2411fd4" />
+
++ Transient analysis is performed to study the time-domain response of the circuit.
++ Differential sinusoidal inputs (Vinp and Vinn) are applied with equal amplitude and opposite phase.
++ Vinp and Vinn are centered around ~1.2 V with a peak-to-peak swing of ~100 mV.
++ The output Vout1 is a sinusoidal waveform with a larger amplitude.
++ Vout1 swings approximately from ~0.9 V to ~1.6 V.
++ The output peak-to-peak swing is ~600–650 mV, indicating amplification.
++ The output waveform is smooth and continuous.
++ No clipping or distortion is observed in the output signal.
++ The output remains centered around a stable DC operating point.
++ The circuit shows proper differential amplification behavior in the time domain.
+### AC analysis
+<img width="995" height="810" alt="Image" src="https://github.com/user-attachments/assets/5070466d-1ab6-4215-9441-4a56b9f1ece3" />
+
++ Frequency sweep range: ~10⁻¹ Hz to 10¹¹ Hz
++ Input magnitudes:
++ Vinp ≈ 1 V (flat across all frequencies)
++ Vinn ≈ 1 V (flat across all frequencies)
++ Output magnitude (Vout1) at low frequencies: ≈ 13–14 V
++ Mid-band gain remains constant at ≈ 13–14 V/V
++ Flat gain region observed up to approximately 10⁸–10⁹ Hz
++ Gain roll-off begins around ~10⁹ Hz
+
+## To Create a New Symbol
+1. Create Cell View and Schematic
++ Go to Create → Cell View, open a new schematic, and design the required circuit.
++ Remove all the power supply sources from the schematic.
+2. Create Pins
++ Click Create Pin or press B.
++ In the pop-up window, enter the pin name, select the direction (input/output/ground), set Usage as Schematic, and Signal Type as Signal.
++ For VDD, select Signal Type as Power; for VSS, select Ground; for VOUT, set Direction as Output and Signal Type as Signal.
+3. Generate Symbol View
++ Go to Create → Cell View → Run Cell View.
++ Ensure the library name and cell name match the schematic and click OK.
++ Assign pins to left, right, top, and bottom as required.
+4. Modify Symbol Shape
++ Use the Create Polygon option to change the shape of the pins or symbol if needed.
+5. Test the Symbol
++ Open a new schematic cell view, add the created symbol, connect power supplies, and run simulations such as DC, Transient, and AC analysis.
