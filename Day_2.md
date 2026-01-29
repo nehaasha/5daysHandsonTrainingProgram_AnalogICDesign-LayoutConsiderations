@@ -221,4 +221,37 @@ Limited transconductance (gm), Load resistance of PMOS, Small-signal operation a
 <img width="898" height="723" alt="Image" src="https://github.com/user-attachments/assets/e83062d3-5d8d-42b3-8151-1c95cf2434e2" />
 
 **Testing Symbol**
+**Transient Analysis**
 
+<img width="1600" height="900" alt="Image" src="https://github.com/user-attachments/assets/01818939-e6c9-474b-a4c0-aab75a31ea10" />
+
++ Two sinusoidal input signals vin1 and vin2 are applied to the OTA.
++ Both inputs have:
++ Frequency ≈ 1 kHz
++ Small amplitude (around ±50 mV)
++ DC level ≈ 1.2–1.3 V
++ vin1 and vin2 are out of phase, representing differential input operation.
++ The output voltage (vout) is a sinusoidal waveform.
++ Output DC level ≈ 1.38–1.40 V.
++ Output peak value ≈ 1.41 V.
++ Output minimum value ≈ 1.38 V.
++ Output peak-to-peak swing ≈ 30–40 mV.
++ Output waveform is smooth and periodic.
++ No clipping or distortion is observed.
++ Output follows the difference between vin1 and vin2, confirming differential amplification.
++ The output frequency matches the input frequency, indicating stable time-domain operation.
+
+**AC Analysis**
+<img width="1600" height="900" alt="Image" src="https://github.com/user-attachments/assets/83124d44-4c5e-4d86-8ad9-55555b109448" />
+
++ Frequency sweep range: 10⁻¹ Hz to 10¹¹ Hz.
++ Input magnitudes:vin1 ≈ 1 V, vin2 ≈ 1 V
++ Both remain constant across frequency.
++ Output magnitude (vout) at low frequency ≈ 13–14 V.
++ Mid-band gain ≈ 13–14 V/V.
++ Gain remains flat from low frequency up to approximately 10⁸–10⁹ Hz.
++ High-frequency roll-off starts around 10⁹ Hz.
++ Beyond roll-off, output magnitude decreases rapidly.
+
+## Conclusion:
+The Day 2 session effectively enhanced understanding of CMOS analog circuit design using the Cadence tool through hands-on implementation and analysis. DC analysis helped in identifying proper biasing and operating points, while transient analysis verified correct time-domain behavior such as phase inversion and stable amplification. AC analysis provided insight into gain, bandwidth, and high-frequency limitations due to parasitic effects. The differential amplifier study demonstrated accurate differential operation with good gain and stability. Additionally, creating and testing custom symbols improved practical design workflow skills. Overall, the session established a strong base for advanced analog blocks, especially Bandgap Reference (BGR) circuits and mixed-signal IC design.
