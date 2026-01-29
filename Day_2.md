@@ -213,3 +213,12 @@ Limited transconductance (gm), Load resistance of PMOS, Small-signal operation a
 + Use the Create Polygon option to change the shape of the pins or symbol if needed.
 5. Test the Symbol
 + Open a new schematic cell view, add the created symbol, connect power supplies, and run simulations such as DC, Transient, and AC analysis.
+
+<img width="895" height="726" alt="Image" src="https://github.com/user-attachments/assets/32282416-c363-41ff-8cf0-6199d7af7b43" />
+
+<img width="1600" height="900" alt="Image" src="https://github.com/user-attachments/assets/b7dacfcd-def2-4bc5-b551-2d91cf3e18d5" />
+
+<img width="898" height="723" alt="Image" src="https://github.com/user-attachments/assets/e83062d3-5d8d-42b3-8151-1c95cf2434e2" />
+
+**Testing Symbol**
+
