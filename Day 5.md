@@ -41,3 +41,18 @@ Routing was performed to create proper electrical connections between placed com
 ### DRC Error Clearance
 
 After completing routing, Design Rule Check (DRC) was executed to verify layout compliance with fabrication rules. Errors related to spacing, enclosure, and width violations were identified and corrected. Guard rings, P-TAPs, and N-TAPs were verified to ensure proper substrate isolation. Clearing all DRC errors confirmed that the layout was fabrication-ready.
+
+### Screenshots taken during the layout design session:
+
+<img width="1340" height="752" alt="image" src="https://github.com/user-attachments/assets/249f031c-2731-45d5-994f-ff6adf8279d3" />
+
+<img width="1334" height="752" alt="image" src="https://github.com/user-attachments/assets/aa508345-9906-460d-a3f5-49bea5474bbe" />
+
+<img width="1339" height="752" alt="image" src="https://github.com/user-attachments/assets/b4631377-38c5-47ae-a24f-171ba43ca191" />
+
+<img width="1336" height="743" alt="image" src="https://github.com/user-attachments/assets/ddb7be04-e39f-4fbc-9811-ecae8a178671" />
+
+<img width="1333" height="756" alt="image" src="https://github.com/user-attachments/assets/a463a2ed-cac1-49ec-9c8b-1cb62cc7f698" />
+
+<img width="1338" height="749" alt="image" src="https://github.com/user-attachments/assets/6d299444-d570-49d1-9758-19deb66c7d34" />
+
