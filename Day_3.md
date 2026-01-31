@@ -27,9 +27,34 @@ In Cadence, the Calculator Window is a powerful analysis tool used to derive cus
 + Return to the Calculator, enable Function Panel to 'all', select Derivative, and click Evaluate to obtain the slope of the waveform.
 ### Example Problem:
 <img width="1009" height="835" alt="Image" src="https://github.com/user-attachments/assets/80767d8f-72c6-4168-afda-2b8b364acba4" />
+
 **DC Analysis:**
 
 <img width="940" height="797" alt="Image" src="https://github.com/user-attachments/assets/3a2734a1-e9ed-4d0a-8f9b-97659b68b1f9" />
 
 + CTAT ( Complementary to Absolute Temperature) = V<sub>BE</sub> = Negative TC.
-+ PTAT (Proportional to Absolute Temperature ) = 
++ PTAT (Proportional to Absolute Temperature ) = ∂V<sub>BE</sub> = Positive TC.
++ ∂V<sub>BE</sub> =  V<sub>BE1</sub> -  V<sub>BE2</sub>
+                   =  V<sub>o1</sub> -  V<sub>o2</sub>
+
+<img width="1600" height="900" alt="Image" src="https://github.com/user-attachments/assets/657ed47d-6f2e-4ee6-92b7-fb3e302f404f" />
+
+**Ectracting the expression:**
+
+
+<img width="1195" height="644" alt="Image" src="https://github.com/user-attachments/assets/2ce29d05-d1fb-470b-ac8f-704c644606f5" />
+
+**CTAT and PTAT slope calculation:**
+
+
+<img width="658" height="784" alt="Image" src="https://github.com/user-attachments/assets/83be5ab4-4e51-4be7-8853-d8dd83a69c8a" />
+
+<img width="634" height="770" alt="Image" src="https://github.com/user-attachments/assets/08295ddb-acaa-4b8f-bcd8-1f6c7a9f3d5e" />
+
++ ∂V<sub>BE</sub>/ ∂T = -1.5mV/Celsious.
++ ∂(delta)V<sub>BE</sub>/ ∂T = 400uV/Celsious.
++ Vref= C<sub>1</sub> V<sub>BE</sub> + C<sub>2</sub>(delta)V<sub>BE</sub>
++ ∂V<sub>ref</sub>/ ∂T= 0.
++ C<sub>1</sub> ∂V<sub>BE</sub>/ ∂T = - C<sub>2</sub>∂(delta)V<sub>BE</sub>
++ C<sub>1</sub>(-1.5mV/Celsious) = - C<sub>2</sub>(400uV/Celsious).
++ Let C<sub>1</sub>=1, C<sub>2</sub>=1.5m/400u = 3.75.
