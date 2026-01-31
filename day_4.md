@@ -92,3 +92,133 @@ Process:
 + A protective oxide or nitride layer is deposited to protect the device.
 
 <img width="1280" height="703" alt="Image" src="https://github.com/user-attachments/assets/d13f149f-d962-450e-ab32-10730cc2a7fa" />
+
+### Analog Layout Flow:
+
+1. Design Specifications
++ Define requirements like gain, bandwidth, power, noise, supply voltage, area, and technology node.
++ This is the target the design must meet.
+2. Schematic Design (Symbol Creation)
++ Create the circuit schematic using transistors, resistors, capacitors, etc.
++ Generate symbols for reuse in higher-level designs.
+3. Pre-layout Simulation
++ Simulate the schematic (DC, AC, transient, noise, etc.).
++ Ideal connections → no layout parasitics yet.
+4. Did spec meet? (Decision)
++ NO: Modify schematic → resimulate.
++ YES: Proceed to layout.
+5. Layout Design
++ Convert the schematic into a physical layout (placing and routing devices).
++ Follow matching, symmetry, shielding, and analog layout rules.
+6. Physical Verification (DRC & LVS)
++ DRC (Design Rule Check): Ensures layout follows fabrication rules.
++ LVS (Layout vs Schematic): Confirms layout matches the schematic.
+7. Parasitic Extraction
++ Extract real-world parasitics (resistance, capacitance) from the layout.
++ Creates an extracted netlist.
+8. Post-layout Simulation
++ Simulate again using extracted parasitics.
++ Results are more realistic than pre-layout simulations.
+9. Did spec meet? (Final Decision)
++ NO: Go back to layout or schematic and fix issues.
++ YES: Finalize the design.
+10. GDSII
++ Generate the final GDSII file.
++ This is sent to the foundry for chip fabrication.
+<img width="1500" height="869" alt="Image" src="https://github.com/user-attachments/assets/1cff6e42-285c-4423-81e3-160dab3c89ef" />
+
+### FloorPlanning:
+
+<img width="1220" height="694" alt="Image" src="https://github.com/user-attachments/assets/2ab02c5f-ad77-4433-bd24-621ec2a27d2a" />
+
+Floorplanning is the initial step of analog layout where the chip area is divided into functional blocks and their relative positions are decided.
+
+**Core ideas:**
++ Analog circuits are sensitive to noise, so they must be isolated from noisy digital circuits.
++ Bias circuits should be placed close to analog blocks to ensure stable voltage/current delivery.
++ Power distribution must be uniform to avoid voltage drops and mismatch.
++ Proper block aspect ratio helps in easier routing and better matching.
+
+### Device Placement Strategies
+
+<img width="1087" height="665" alt="Image" src="https://github.com/user-attachments/assets/6509fce2-16d6-49f4-b737-10d706a6c6a0" />
+
+Device placement determines how transistors are positioned inside each block.
+
+**Key concepts:**
++ Relative placement is more important than absolute position.
++ Matched devices must be placed close and symmetrically to experience identical conditions.
++ Critical devices (input pairs, current mirrors) are placed first.
++ Dummy devices are added at edges to protect real devices from edge effects.
++ Device orientation (rotation and mirroring) is chosen carefully to maintain matching.
+
+### Matching & Layout Techniques:
+
+<img width="1271" height="636" alt="Image" src="https://github.com/user-attachments/assets/bae18a63-33dd-4dd9-b498-76de11bfd649" />
+<img width="250" height="205" alt="Image" src="https://github.com/user-attachments/assets/828e79f2-f912-4781-8e8a-306763375373" />
+Matching is crucial in analog circuits like differential pairs and current mirrors.
+
+Common techniques:
+**Common-Centroid Layout**
++ Devices are arranged around a central point.
++ Cancels linear process and temperature gradients.
++ Used when high precision is required.
+**Interdigitation**
++ Devices are split into smaller units and interleaved.
++ Ensures all devices see the same environment.
++ Useful when space is limited but matching is needed.
+**Dummy Devices**
++ Non-functional devices placed at array boundaries.
++ Protect active devices from lithography and edge effects.
+
+### Fingers vs Multipliers:
+
+<img width="1266" height="630" alt="Image" src="https://github.com/user-attachments/assets/8ed5b835-76eb-46a7-8c75-b288212593bd" />
+
+These are two methods to realize a required transistor size.
+
+**Fingering**
++ A single transistor is divided into multiple parallel gate fingers.
++ Reduces parasitic resistance.
++ Improves current distribution and matching.
++ Preferred for high-performance analog circuits.
+**Multipliers**
++ Multiple identical transistors connected in parallel.
++ Easier to implement but introduces higher parasitics.
++ Suitable for less critical applications.
+**Comparison:**
++ Both achieve the same effective area.
++ Fingering gives lower on-resistance and better performance.
++ Multipliers may increase resistance and mismatch.
+### Introduction to Analog Layout Design
+Steps to Use Cadence for Layout Design:
+1. Launching Layout
++ Go to Launch → Layout XL.
++ For a new layout, click New; for an existing layout, select Existing and choose Automatic.
++ Click OK, then select Generate All from Source and enable PR Boundary.
+2. Block Alignment
++ Right-click near the Cadence toolbar name, go to Toolbar, and enable Align.
++ Group the blocks, then click Align Top.
++ Again go to Create → Group, and use Align Vertical for proper alignment.
+3. Running DRC
++ Go to Assura → Technology, click the three dots, navigate to Install → Foundry → Analog → 45nm_REV, and select assura_tech.lib, then click OK.
++ Set the technology to GPDK045_AV, configure the switches, apply the changes, and run DRC.
++ To get the scale Click K.
+
+
+<img width="1345" height="769" alt="Image" src="https://github.com/user-attachments/assets/a987320f-0077-43bd-ac32-fa7c119cbc87" />
+
+<img width="1344" height="703" alt="Image" src="https://github.com/user-attachments/assets/916511af-3a8f-43cb-839a-de7c0795a99c" />
+
+<img width="1340" height="744" alt="image" src="https://github.com/user-attachments/assets/4fb4f6f6-dc87-4b20-81f5-88cb7692c8e6" />
+
+<img width="1339" height="760" alt="image" src="https://github.com/user-attachments/assets/dbf41eb4-974e-4a7a-9feb-d8b04ecc40b2" />
+
+<img width="1291" height="751" alt="image" src="https://github.com/user-attachments/assets/deabe1b5-a458-491a-b844-d41e13debf31" />
+
+<img width="1337" height="747" alt="image" src="https://github.com/user-attachments/assets/c0ed8c6e-7a6a-4c07-89e8-6e3632877352" />
+
+### Conclusion:
+Day 4 provided a comprehensive understanding of semiconductor fabrication and analog layout design, bridging the gap between device physics and physical IC implementation. The session covered CMOS fabrication steps from wafer preparation to metallization, along with detailed insights into NMOS and PMOS structures and isolation techniques such as LOCOS and STI, highlighting why STI is preferred in modern technologies. Additionally, the analog layout flow was explained clearly, emphasizing the importance of pre- and post-layout simulations, parasitic extraction, and physical verification (DRC & LVS). Concepts like floorplanning, device placement, matching techniques, and fingering vs multipliers reinforced the need for precision and symmetry in analog design. Overall, the session strengthened the understanding of how careful fabrication and layout practices directly impact circuit performance, reliability, and manufacturability.
+
+
