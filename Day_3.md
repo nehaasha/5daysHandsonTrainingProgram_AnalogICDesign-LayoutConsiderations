@@ -58,3 +58,38 @@ In Cadence, the Calculator Window is a powerful analysis tool used to derive cus
 + C<sub>1</sub> ∂V<sub>BE</sub>/ ∂T = - C<sub>2</sub>∂(delta)V<sub>BE</sub>
 + C<sub>1</sub>(-1.5mV/Celsious) = - C<sub>2</sub>(400uV/Celsious).
 + Let C<sub>1</sub>=1, C<sub>2</sub>=1.5m/400u = 3.75.
+
+### BGR basic architecture design and anlysis:
+<img width="659" height="602" alt="Image" src="https://github.com/user-attachments/assets/c384edc2-ed73-41be-93a8-2e8efe630d2f" />
+
+<img width="1001" height="819" alt="Image" src="https://github.com/user-attachments/assets/c12f17ac-6429-4570-9e2f-5a3f1692e116" />
+
+<img width="995" height="837" alt="Image" src="https://github.com/user-attachments/assets/fd105283-4ff8-4c97-abec-764a973ec4c3" />
+
++ A basic BJT-based temperature-independent bandgap reference (BGR), also called a first-order/classic BGR, is considered.
++ The reference voltage is given by Vref = V<sub>BE2</sub> + V<sub>T</sub> * ln(n) *c
++ Let R<sub>1</sub>=R<sub>2</sub> = 10kohm
++ For zero temperature coefficient (zero TC), the condition is ln(n) *(1+R<sub>2</sub>/R<sub>3</sub>)= 17.2.
++ taking n= 10, R<sub>2</sub>=10kohm, then R<sub>3</sub> = 1.545kohm.
++ Thus, the resistor values are designed for a temperature-independent BGR.
++ Differentiating V<sub>ref</sub> with respect to temperature gives ∂V<sub>ref</sub>/ ∂T = d(CTAT)/dT + d(PTAT)/dT∂V<sub>ref</sub>/ ∂T.
++ Using the Cadence calculator, the derivatives are obtained as:
++ Using the Cadence calculator, the derivatives are obtained as: deriv(CTAT)= -1.7110^-3 v/celcius and deriv(PTAT)= 202.210^-6 v/celcius.
++ Proper scaling of the PTAT term compensates the CTAT behavior, resulting in a zero-TC reference voltage.
+
+<img width="992" height="826" alt="Image" src="https://github.com/user-attachments/assets/f3d9d26c-eec4-42d3-9040-9fac8c8a2598" />
+
++ for R<sub>3</sub> = 1.545Kohm , R<sub>2</sub>=10Kohm we got deriv(vref)= -1.9906 *10^-6.
++ so we need to design more accurate one by varying (1+R<sub>2</sub>/R<sub>3</sub>).
++ so to make deriv(vref) = 0,
+  0 = deriv(CTAT) + deriv(PTAT) (1+R<sub>2</sub>/R<sub>3</sub>)\
+  0= -1.7110^-3 + 202.2*10^-6 * (1+R<sub>2</sub>/R<sub>3</sub>)\
+  (1+R<sub>2</sub>/R<sub>3</sub>) = 8.4569\
+  So R<sub>2</sub> =10Kohm and R<sub>3</sub>= 1.34102 k ohm
++ Now we get, deriv(vref)=-19.66 uV/celcius
+
+### Conclusion:
+The Day 3 session provided practical insight into using the Cadence Calculator and spectrum analysis tools for detailed analog IC performance evaluation. Through spectrum analysis, key dynamic performance metrics such as SNR, SFDR, SINAD, and ENOB were extracted at both input and output, clearly demonstrating how circuit non-idealities affect signal quality. The calculator was effectively used to derive CTAT and PTAT expressions, calculate their temperature slopes, and validate theoretical expectations through simulation.
+The Bandgap Reference (BGR) analysis showed how proper scaling of PTAT and CTAT components is essential to achieve temperature independence. Initial resistor values resulted in a small residual temperature coefficient, which was further minimized by adjusting the resistor ratio (1+R<sub>2</sub>/R<sub>3</sub>). By optimizing the resistor values, the temperature drift of the reference voltage was significantly reduced, confirming near zero-TC behavior. Overall, the session reinforced the importance of accurate expression extraction, derivative analysis, and iterative design optimization to achieve robust and reliable analog circuit performance.
+  
+
