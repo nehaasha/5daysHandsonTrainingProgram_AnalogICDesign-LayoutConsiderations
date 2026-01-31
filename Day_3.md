@@ -79,7 +79,7 @@ In Cadence, the Calculator Window is a powerful analysis tool used to derive cus
 
 <img width="992" height="826" alt="Image" src="https://github.com/user-attachments/assets/f3d9d26c-eec4-42d3-9040-9fac8c8a2598" />
 
-+ for R<sub>3</sub> = 1.545Kohm , R<sub>2</sub>=10Kohm we got deriv(vref)= -1.9906 *10^-6.
++ for R<sub>3</sub> = 1.545Kohm , R<sub>2</sub>=10Kohm we got deriv(vref)= -1.9906 *10^-4.
 + so we need to design more accurate one by varying (1+R<sub>2</sub>/R<sub>3</sub>).
 + so to make deriv(vref) = 0,
   0 = deriv(CTAT) + deriv(PTAT) (1+R<sub>2</sub>/R<sub>3</sub>)\
